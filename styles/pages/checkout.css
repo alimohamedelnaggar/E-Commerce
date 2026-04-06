@@ -1,0 +1,270 @@
+/* =============================================================
+   CHECKOUT PAGE STYLES
+   ============================================================= */
+   body { background: #f8fafc; }
+
+   /* Header Minimal */
+   .co-header {
+     background: #ffffff;
+     padding: 1.5rem var(--brand-pad-x);
+     border-bottom: 1px solid #e2e8f0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .co-logo {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     text-decoration: none;
+     color: #0f172a;
+     font-weight: 800;
+     font-size: 1.25rem;
+     letter-spacing: -0.02em;
+   }
+   
+   /* Layout */
+   .co-layout {
+     padding: 3rem var(--brand-pad-x) 5rem;
+     max-width: 1100px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 1fr 380px;
+     gap: 3rem;
+     align-items: start;
+   }
+   
+   @media (max-width: 900px) {
+     .co-layout {
+       grid-template-columns: 1fr;
+       gap: 2rem;
+     }
+   }
+   
+   /* Form Sections */
+   .co-section {
+     background: #ffffff;
+     border-radius: 12px;
+     border: 1px solid #e2e8f0;
+     padding: 2rem;
+     margin-bottom: 1.5rem;
+   }
+   .co-section__title {
+     font-size: 1.25rem;
+     font-weight: 700;
+     color: #0f172a;
+     margin: 0 0 1.5rem;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+   }
+   .co-section__step {
+     background: #0f172a;
+     color: white;
+     width: 24px;
+     height: 24px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50%;
+     font-size: 0.85rem;
+     font-weight: 800;
+   }
+   
+   /* Form Grid */
+   .co-form-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 1rem;
+   }
+   .co-col-full { grid-column: 1 / -1; }
+   
+   .co-field {
+     display: flex;
+     flex-direction: column;
+     gap: 0.4rem;
+   }
+   .co-label {
+     font-size: 0.875rem;
+     font-weight: 600;
+     color: #334155;
+   }
+   .co-input {
+     padding: 0.75rem 1rem;
+     border: 1px solid #cbd5e1;
+     border-radius: 6px;
+     font-family: inherit;
+     font-size: 0.95rem;
+     color: #0f172a;
+     transition: border-color 0.2s, box-shadow 0.2s;
+   }
+   .co-input:focus {
+     outline: none;
+     border-color: #3b82f6;
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+   }
+   
+   /* Summary Sidebar */
+   .co-summary {
+     background: #ffffff;
+     border-radius: 12px;
+     border: 1px solid #e2e8f0;
+     position: sticky;
+     top: 1.5rem;
+     padding: 2rem;
+   }
+   .co-summary__title {
+     font-size: 1.25rem;
+     font-weight: 700;
+     color: #0f172a;
+     margin: 0 0 1.5rem;
+   }
+   
+   .co-items {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     margin-bottom: 1.5rem;
+     max-height: 400px;
+     overflow-y: auto;
+   }
+   
+   .co-item {
+     display: flex;
+     gap: 1rem;
+     align-items: center;
+   }
+   .co-item__img-wrap {
+     position: relative;
+   }
+   .co-item__img {
+     width: 60px;
+     height: 60px;
+     object-fit: cover;
+     border-radius: 8px;
+     border: 1px solid #e2e8f0;
+   }
+   .co-item__qty {
+     position: absolute;
+     top: -6px;
+     right: -6px;
+     background: #64748b;
+     color: white;
+     font-size: 0.7rem;
+     font-weight: 700;
+     width: 18px;
+     height: 18px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .co-item__info { flex: 1; }
+   .co-item__name {
+     font-size: 0.95rem;
+     font-weight: 600;
+     color: #0f172a;
+     margin: 0 0 0.1rem;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     max-width: 180px;
+   }
+   .co-item__price {
+     font-size: 0.9rem;
+     color: #64748b;
+     font-weight: 500;
+   }
+   
+   /* Totals */
+   .co-totals-row {
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 0.75rem;
+     font-size: 0.95rem;
+     color: #475569;
+   }
+   .co-totals-row--highlight {
+     color: #10b981;
+   }
+   .co-totals-divider {
+     height: 1px;
+     background: #e2e8f0;
+     margin: 1.25rem 0;
+   }
+   .co-totals-final {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     font-size: 1.35rem;
+     font-weight: 800;
+     color: #0f172a;
+     margin-bottom: 1.5rem;
+   }
+   
+   /* Submit Button */
+   .co-submit {
+     width: 100%;
+     background: #f5c400; /* Amazon Yellow */
+     color: #111;
+     border: 1px solid #e1b400;
+     padding: 1rem;
+     border-radius: 8px;
+     font-family: inherit;
+     font-size: 1.05rem;
+     font-weight: 700;
+     cursor: pointer;
+     transition: background 0.2s;
+   }
+   .co-submit:hover { background: #e0b400; }
+   .co-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+   
+   /* Success Overlay */
+   .co-modal {
+     position: fixed;
+     inset: 0;
+     background: rgba(15, 23, 42, 0.8);
+     backdrop-filter: blur(4px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 999;
+   }
+   .co-modal__content {
+     background: white;
+     padding: 3rem;
+     border-radius: 16px;
+     text-align: center;
+     max-width: 400px;
+     width: 90%;
+     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+     animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+   }
+   
+   @keyframes popIn {
+     0% { transform: scale(0.9); opacity: 0; }
+     100% { transform: scale(1); opacity: 1; }
+   }
+   
+   .co-modal__icon {
+     background: #10b981;
+     color: white;
+     width: 64px;
+     height: 64px;
+     border-radius: 50%;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 1.5rem;
+   }
+   .co-modal__title {
+     font-size: 1.5rem;
+     font-weight: 800;
+     color: #0f172a;
+     margin: 0 0 0.5rem;
+   }
+   .co-modal__desc {
+     color: #64748b;
+     font-size: 1rem;
+     margin: 0 0 1.5rem;
+   }

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — TechStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/pages/checkout.css" />
+</head>
+<body>
+  
+  <header class="co-header">
+    <a href="index.html" class="co-logo" aria-label="TechStore home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 0 1-8 0"/>
+      </svg>
+      TechStore Checkout
+    </a>
+  </header>
+
+  <main class="co-layout" id="co-layout" hidden>
+    
+    <div class="co-main-col">
+      <form id="checkout-form" aria-label="Checkout details">
+        
+        <!-- Shipping Section -->
+        <section class="co-section">
+          <h2 class="co-section__title">
+            <span class="co-section__step" aria-hidden="true">1</span>
+            Shipping Address
+          </h2>
+          <div class="co-form-grid">
+            <div class="co-field">
+              <label class="co-label" for="fname">First name</label>
+              <input class="co-input" type="text" id="fname" name="fname" required />
+            </div>
+            <div class="co-field">
+              <label class="co-label" for="lname">Last name</label>
+              <input class="co-input" type="text" id="lname" name="lname" required />
+            </div>
+            <div class="co-field co-col-full">
+              <label class="co-label" for="address">Address</label>
+              <input class="co-input" type="text" id="address" name="address" required />
+            </div>
+            <div class="co-field">
+              <label class="co-label" for="city">City</label>
+              <input class="co-input" type="text" id="city" name="city" required />
+            </div>
+            <div class="co-field">
+              <label class="co-label" for="zip">ZIP code</label>
+              <input class="co-input" type="text" id="zip" name="zip" required />
+            </div>
+            <div class="co-field co-col-full">
+              <label class="co-label" for="phone">Phone number</label>
+              <input class="co-input" type="tel" id="phone" name="phone" required />
+            </div>
+          </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="co-section">
+          <h2 class="co-section__title">
+            <span class="co-section__step" aria-hidden="true">2</span>
+            Payment details
+          </h2>
+          <div class="co-form-grid">
+            <div class="co-field co-col-full">
+              <label class="co-label" for="ccname">Name on card</label>
+              <input class="co-input" type="text" id="ccname" name="ccname" required />
+            </div>
+            <div class="co-field co-col-full">
+              <label class="co-label" for="ccnum">Card number</label>
+              <input class="co-input" type="text" id="ccnum" name="ccnum" placeholder="0000 0000 0000 0000" required />
+            </div>
+            <div class="co-field">
+              <label class="co-label" for="ccexp">Expiration (MM/YY)</label>
+              <input class="co-input" type="text" id="ccexp" name="ccexp" placeholder="MM/YY" required />
+            </div>
+            <div class="co-field">
+              <label class="co-label" for="cccvv">CVV</label>
+              <input class="co-input" type="text" id="cccvv" name="cccvv" required />
+            </div>
+          </div>
+        </section>
+        
+        <button type="submit" class="co-submit" id="submit-btn">Place Order</button>
+      </form>
+    </div>
+
+    <!-- Summary Sidebar -->
+    <aside class="co-summary">
+      <h2 class="co-summary__title">Order Summary</h2>
+      
+      <div class="co-items" id="co-items-list" aria-label="Items in your order">
+        <!-- Injected via JS -->
+      </div>
+
+      <div class="co-totals-row">
+        <span>Subtotal</span>
+        <span id="co-subtotal">$0</span>
+      </div>
+      <div class="co-totals-row">
+        <span>Shipping</span>
+        <span id="co-shipping" class="co-totals-row--highlight">Free</span>
+      </div>
+      
+      <div class="co-totals-divider"></div>
+      
+      <div class="co-totals-final">
+        <span>Total</span>
+        <span id="co-total">$0</span>
+      </div>
+    </aside>
+
+  </main>
+
+  <script type="module" src="src/pages/checkout.js"></script>
+</body>
+</html>

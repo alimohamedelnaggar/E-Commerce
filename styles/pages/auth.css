@@ -1,0 +1,138 @@
+/* =============================================================
+   AUTH PAGES STYLES (Login & Register)
+   ============================================================= */
+   body { background: #f8fafc; }
+
+   /* Header Minimal */
+   .auth-header {
+     background: #ffffff;
+     padding: 1.5rem var(--brand-pad-x);
+     border-bottom: 1px solid #e2e8f0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .auth-logo {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     text-decoration: none;
+     color: #0f172a;
+     font-weight: 800;
+     font-size: 1.25rem;
+     letter-spacing: -0.02em;
+   }
+   
+   /* Main Layout */
+   .auth-layout {
+     min-height: calc(100vh - 80px); /* Fill screen minus header */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 3rem var(--brand-pad-x);
+   }
+   
+   /* Card */
+   .auth-card {
+     background: #ffffff;
+     border-radius: 12px;
+     border: 1px solid #e2e8f0;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+     width: 100%;
+     max-width: 440px;
+     padding: 2.5rem 3rem;
+   }
+   @media (max-width: 500px) {
+     .auth-card { padding: 2rem 1.5rem; }
+   }
+   
+   .auth-title {
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: #0f172a;
+     margin: 0 0 0.5rem;
+   }
+   .auth-sub {
+     font-size: 0.95rem;
+     color: #64748b;
+     margin: 0 0 2rem;
+   }
+   
+   /* Form */
+   .auth-form {
+     display: flex;
+     flex-direction: column;
+     gap: 1.25rem;
+   }
+   
+   .auth-field {
+     display: flex;
+     flex-direction: column;
+     gap: 0.4rem;
+   }
+   .auth-label {
+     font-size: 0.875rem;
+     font-weight: 600;
+     color: #334155;
+   }
+   .auth-input {
+     padding: 0.75rem 1rem;
+     border: 1px solid #cbd5e1;
+     border-radius: 6px;
+     font-family: inherit;
+     font-size: 0.95rem;
+     color: #0f172a;
+     transition: border-color 0.2s, box-shadow 0.2s;
+   }
+   .auth-input:focus {
+     outline: none;
+     border-color: #3b82f6;
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+   }
+   
+   /* Actions */
+   .auth-submit {
+     margin-top: 0.5rem;
+     width: 100%;
+     background: #f5c400; /* Amazon Yellow */
+     color: #111;
+     border: 1px solid #e1b400;
+     padding: 1rem;
+     border-radius: 8px;
+     font-family: inherit;
+     font-size: 1.05rem;
+     font-weight: 700;
+     cursor: pointer;
+     transition: background 0.2s;
+   }
+   .auth-submit:hover { background: #e0b400; }
+   .auth-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+   
+   .auth-error {
+     display: none;
+     background: #fee2e2;
+     color: #b91c1c;
+     padding: 0.75rem;
+     border-radius: 6px;
+     font-size: 0.9rem;
+     font-weight: 500;
+     border: 1px solid #fecaca;
+     margin-bottom: 1.5rem;
+   }
+   .auth-error.is-visible { display: block; }
+   
+   /* Footer Links */
+   .auth-footer {
+     margin-top: 2rem;
+     padding-top: 1.5rem;
+     border-top: 1px solid #e2e8f0;
+     text-align: center;
+     font-size: 0.95rem;
+     color: #64748b;
+   }
+   .auth-footer a {
+     color: #3b82f6;
+     text-decoration: none;
+     font-weight: 600;
+   }
+   .auth-footer a:hover { text-decoration: underline; }

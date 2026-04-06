@@ -1,0 +1,202 @@
+/* Shop by category — aligned with brand + home */
+.categories {
+  padding: clamp(2.5rem, 6vw, 4rem) var(--brand-pad-x);
+  background: linear-gradient(180deg, #f1f5f9 0%, #e8ecf2 100%);
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.categories__inner {
+  max-width: var(--brand-max);
+  margin: 0 auto;
+}
+
+.categories__header {
+  margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+  text-align: center;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categories__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6366f1;
+}
+
+.categories__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #0f172a;
+}
+
+.categories__sub {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.categories__grid {
+  display: grid;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .categories__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.25rem 1.15rem;
+  min-height: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: var(--brand-radius-lg);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+    box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 16px 40px -20px rgba(49, 46, 129, 0.25),
+    0 0 0 1px rgba(99, 102, 241, 0.08);
+}
+
+.category-card:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+}
+
+.category-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.category-card__icon--laptop {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 8px 20px -6px rgba(99, 102, 241, 0.55);
+}
+
+.category-card__icon--mobile {
+  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  box-shadow: 0 8px 20px -6px rgba(14, 165, 233, 0.45);
+}
+
+.category-card__icon--accessories {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  box-shadow: 0 8px 20px -6px rgba(245, 158, 11, 0.45);
+}
+
+.category-card__icon--keyboard {
+  background: linear-gradient(135deg, #ec4899, #a855f7);
+  box-shadow: 0 8px 20px -6px rgba(236, 72, 153, 0.45);
+}
+
+.category-card__icon svg {
+  display: block;
+}
+
+.category-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.category-card__name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.category-card__count {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.category-card__arrow {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.category-card__arrow svg {
+  transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.category-card:hover .category-card__arrow svg {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card:hover {
+    transform: none;
+  }
+
+  .category-card:hover .category-card__arrow svg {
+    transform: none;
+  }
+}
+
+/* Standalone category listing page (category.html) */
+.category-page {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--brand-pad-x);
+  max-width: var(--brand-max);
+  margin: 0 auto;
+}
+
+.category-page__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.category-page__label {
+  margin: 0 0 1.5rem;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.category-page__back {
+  font-weight: 600;
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.category-page__back:hover {
+  text-decoration: underline;
+}

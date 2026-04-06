@@ -1,0 +1,162 @@
+export const products = [
+  {
+    id: 1,
+    name: "Gaming Laptop Pro",
+    category: "laptop",
+    price: 1299,
+    oldPrice: 1599,
+    rating: 4.8,
+    reviews: 324,
+    badge: "Hot",
+    featured: true,
+    bestSeller: true,
+    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&q=80"
+  },
+  {
+    id: 2,
+    name: "iPhone 15 Pro Max",
+    category: "mobile",
+    price: 1099,
+    oldPrice: null,
+    rating: 4.9,
+    reviews: 512,
+    badge: "New",
+    featured: true,
+    newArrival: true,
+    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&q=80"
+  },
+  {
+    id: 3,
+    name: "Wireless ANC Headphones",
+    category: "accessory",
+    price: 249,
+    oldPrice: 329,
+    rating: 4.7,
+    reviews: 891,
+    badge: "Sale",
+    featured: true,
+    bestSeller: true,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80"
+  },
+  {
+    id: 4,
+    name: "Mechanical Keyboard RGB",
+    category: "keyboard",
+    price: 149,
+    oldPrice: null,
+    rating: 4.6,
+    reviews: 203,
+    badge: null,
+    featured: false,
+    newArrival: true,
+    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=400&q=80"
+  },
+  {
+    id: 5,
+    name: "4K Curved Monitor 34\"",
+    category: "monitor",
+    price: 899,
+    oldPrice: 1099,
+    rating: 4.9,
+    reviews: 156,
+    badge: "Top Pick",
+    featured: true,
+    bestSeller: false,
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80"
+  },
+  {
+    id: 6,
+    name: "Samsung Galaxy S24 Ultra",
+    category: "mobile",
+    price: 1199,
+    oldPrice: null,
+    rating: 4.8,
+    reviews: 278,
+    badge: "New",
+    featured: false,
+    newArrival: true,
+    image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&q=80"
+  },
+  {
+    id: 7,
+    name: "Ergonomic Pro Mouse",
+    category: "accessory",
+    price: 79,
+    oldPrice: 99,
+    rating: 4.5,
+    reviews: 642,
+    badge: null,
+    featured: false,
+    bestSeller: true,
+    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&q=80"
+  },
+  {
+    id: 8,
+    name: "MacBook Air M3",
+    category: "laptop",
+    price: 1499,
+    oldPrice: null,
+    rating: 5.0,
+    reviews: 198,
+    badge: "New",
+    featured: false,
+    newArrival: true,
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80"
+  },
+  {
+    id: 9,
+    name: "USB-C Docking Station",
+    category: "accessory",
+    price: 129,
+    oldPrice: 169,
+    rating: 4.4,
+    reviews: 389,
+    badge: "Sale",
+    featured: false,
+    bestSeller: true,
+    image: "https://images.unsplash.com/photo-1625895197185-efcec01cffe0?w=400&q=80"
+  },
+  {
+    id: 10,
+    name: "Smart Watch Series 9",
+    category: "accessory",
+    price: 399,
+    oldPrice: null,
+    rating: 4.7,
+    reviews: 445,
+    badge: "New",
+    featured: true,
+    newArrival: true,
+    image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&q=80"
+  },
+  {
+    id: 11,
+    name: "Slim Wireless Keyboard",
+    category: "keyboard",
+    price: 89,
+    oldPrice: 119,
+    rating: 4.3,
+    reviews: 176,
+    badge: null,
+    featured: false,
+    bestSeller: true,
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80"
+  },
+  {
+    id: 12,
+    name: "Gaming Headset 7.1",
+    category: "accessory",
+    price: 179,
+    oldPrice: 219,
+    rating: 4.6,
+    reviews: 312,
+    badge: "Sale",
+    featured: false,
+    newArrival: true,
+    image: "https://images.unsplash.com/photo-1599669454699-248893623440?w=400&q=80"
+  }
+];
+
+export const getFeatured = () => products.filter(p => p.featured);
+export const getNewArrivals = () => products.filter(p => p.newArrival);
+export const getBestSellers = () => products.filter(p => p.bestSeller);

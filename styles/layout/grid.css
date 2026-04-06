@@ -1,0 +1,31 @@
+#products-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Mobile */
+#products-container {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  #products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop */
+@media (min-width: 992px) {
+  #products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  #products-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

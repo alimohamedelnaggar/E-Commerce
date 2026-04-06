@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Products — TechStore</title>
+  <meta name="description"
+    content="Browse TechStore's full catalog of premium laptops, mobiles, accessories and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/pages/products-list.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar" data-navbar>
+    <div class="nav-container">
+      <a href="index.html" class="logo" aria-label="TechStore home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+        </span>
+        <span class="logo-text">TechStore</span>
+      </a>
+      <div class="search-box" role="search">
+        <label class="visually-hidden" for="nav-search">Search products</label>
+        <input id="nav-search" type="search" name="q" placeholder="Search products…" autocomplete="off" />
+        <span class="search-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </span>
+      </div>
+      <nav class="nav-actions" id="nav-menu" aria-label="Main">
+        <a href="index.html" class="nav-link">
+          Home
+        </a>
+        <a href="product.html" class="nav-link">
+          Products
+        </a>
+        <a href="cart.html" class="nav-link nav-cart">
+          <svg class="nav-link-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          </svg>
+          Cart
+          <span class="cart-badge" data-cart-count="0" aria-label="Items in cart">0</span>
+        </a>
+        <div class="nav-auth">
+          <a href="login.html" class="nav-btn nav-btn--ghost">Log in</a>
+          <a href="register.html" class="nav-btn nav-btn--primary">Register</a>
+        </div>
+      </nav>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span class="menu-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="nav-backdrop" data-nav-backdrop hidden aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- Page header / breadcrumb -->
+    <div class="pl-header">
+      <div class="pl-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Products</li>
+          </ol>
+        </nav>
+        <h1 class="pl-header__title">All Products</h1>
+        <p class="pl-header__sub">Discover <span id="result-count">12</span> premium tech products</p>
+      </div>
+    </div>
+
+    <!-- Content area -->
+    <div class="pl-layout">
+      <div class="pl-layout__inner">
+
+        <!-- Sidebar filters -->
+        <aside class="pl-sidebar" aria-label="Product filters">
+          <div class="pl-sidebar__inner">
+
+            <div class="pl-filter-group">
+              <h2 class="pl-filter-title">Category</h2>
+              <ul class="pl-filter-list" id="category-filters">
+                <li><label class="pl-filter-check"><input type="radio" name="cat" value="all" checked /> All
+                    Products</label></li>
+                <li><label class="pl-filter-check"><input type="radio" name="cat" value="laptop" /> Laptops</label></li>
+                <li><label class="pl-filter-check"><input type="radio" name="cat" value="mobile" /> Mobiles</label></li>
+                <li><label class="pl-filter-check"><input type="radio" name="cat" value="accessory" />
+                    Accessories</label></li>
+                <li><label class="pl-filter-check"><input type="radio" name="cat" value="keyboard" /> Keyboards</label>
+                </li>
+                <li><label class="pl-filter-check"><input type="radio" name="cat" value="monitor" /> Monitors</label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pl-filter-group">
+              <h2 class="pl-filter-title">Price Range</h2>
+              <div class="pl-price-inputs">
+                <input type="number" id="price-min" placeholder="Min $" min="0" />
+                <span>—</span>
+                <input type="number" id="price-max" placeholder="Max $" min="0" />
+              </div>
+              <input type="range" id="price-range" class="pl-range" min="0" max="2000" value="2000" step="10"
+                aria-label="Maximum price" />
+              <output for="price-range" id="range-output">Up to $2000</output>
+            </div>
+
+            <div class="pl-filter-group">
+              <h2 class="pl-filter-title">Rating</h2>
+              <ul class="pl-filter-list" id="rating-filters">
+                <li><label class="pl-filter-check"><input type="radio" name="rating" value="0" checked /> All
+                    ratings</label></li>
+                <li><label class="pl-filter-check"><input type="radio" name="rating" value="4.5" /> ★ 4.5 &amp;
+                    up</label></li>
+                <li><label class="pl-filter-check"><input type="radio" name="rating" value="4" /> ★ 4.0 &amp; up</label>
+                </li>
+                <li><label class="pl-filter-check"><input type="radio" name="rating" value="3.5" /> ★ 3.5 &amp;
+                    up</label></li>
+              </ul>
+            </div>
+
+            <div class="pl-filter-group">
+              <h2 class="pl-filter-title">Show Only</h2>
+              <ul class="pl-filter-list">
+                <li><label class="pl-filter-check"><input type="checkbox" id="filter-featured" /> Featured</label></li>
+                <li><label class="pl-filter-check"><input type="checkbox" id="filter-new" /> New Arrivals</label></li>
+                <li><label class="pl-filter-check"><input type="checkbox" id="filter-sale" /> On Sale</label></li>
+              </ul>
+            </div>
+
+            <button class="pl-reset-btn" id="reset-filters">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" aria-hidden="true">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 .49-4.51" />
+              </svg>
+              Reset all filters
+            </button>
+          </div>
+        </aside>
+
+        <!-- Products grid area -->
+        <section class="pl-content" aria-labelledby="pl-content-title">
+          <div class="pl-toolbar">
+            <p id="pl-content-title" class="pl-toolbar__count"><span id="grid-count">12</span> products found</p>
+            <div class="pl-toolbar__right">
+              <label class="visually-hidden" for="sort-select">Sort by</label>
+              <select id="sort-select" class="pl-sort">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+                <option value="name">Name A–Z</option>
+              </select>
+              <div class="pl-view-toggle" role="group" aria-label="View mode">
+                <button class="pl-view-btn pl-view-btn--active" id="view-grid" aria-label="Grid view"
+                  aria-pressed="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                  </svg>
+                </button>
+                <button class="pl-view-btn" id="view-list" aria-label="List view" aria-pressed="false">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <line x1="8" y1="6" x2="21" y2="6" />
+                    <line x1="8" y1="12" x2="21" y2="12" />
+                    <line x1="8" y1="18" x2="21" y2="18" />
+                    <line x1="3" y1="6" x2="3.01" y2="6" />
+                    <line x1="3" y1="12" x2="3.01" y2="12" />
+                    <line x1="3" y1="18" x2="3.01" y2="18" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile filter toggle -->
+          <button class="pl-mobile-filter-btn" id="mobile-filter-toggle" aria-expanded="false"
+            aria-controls="mobile-filter-drawer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="8" y1="12" x2="16" y2="12" />
+              <line x1="11" y1="18" x2="13" y2="18" />
+            </svg>
+            Filters
+          </button>
+
+          <div class="pcard-grid" id="pl-products-grid"></div>
+
+          <p class="pl-no-results" id="pl-no-results" hidden>
+            No products match your filters. <button id="pl-no-results-reset">Reset filters</button>
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="src/pages/products-list.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+.product-card {
+  background: #1e293b;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.product-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Price */
+.product-price {
+  color: #38bdf8;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.product-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Add button */
+.btn.add {
+  background: #38bdf8;
+  color: black;
+}
+
+/* View button */
+.btn.view {
+  background: #334155;
+  color: white;
+}
+
+/* Hover effect */
+.product-card:hover {
+  transform: translateY(-5px);
+}

@@ -1,0 +1,50 @@
+/* Shared tokens — navbar + hero stay visually one system */
+:root {
+  --brand-font: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --brand-max: 1160px;
+  --brand-pad-x: clamp(16px, 4vw, 28px);
+  --brand-radius: 12px;
+  --brand-radius-lg: clamp(18px, 2.5vw, 28px);
+
+  /* Purple stack (navbar bar + hero card) */
+  --brand-indigo-deep: #312e81;
+  --brand-violet: #5b21b6;
+  --brand-purple: #6d28d9;
+  --brand-ink: #0f172a;
+  --brand-night: #020617;
+
+  --brand-grad-bar: linear-gradient(
+    115deg,
+    var(--brand-indigo-deep) 0%,
+    var(--brand-violet) 42%,
+    var(--brand-purple) 100%
+  );
+  --brand-grad-hero: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.98) 0%,
+    rgba(49, 46, 129, 0.96) 38%,
+    rgba(91, 33, 182, 0.94) 72%,
+    rgba(109, 40, 217, 0.92) 100%
+  );
+  --brand-grad-shell: linear-gradient(
+    180deg,
+    #3730a3 0%,
+    #312e81 18%,
+    #1e1b4b 52%,
+    var(--brand-night) 100%
+  );
+
+  --brand-accent-strip: linear-gradient(
+    90deg,
+    #fbbf24,
+    #f472b6,
+    #a78bfa,
+    #38bdf8
+  );
+  --brand-highlight: #fde68a;
+  --brand-cta: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%);
+}
+
+body {
+  font-family: var(--brand-font);
+}
